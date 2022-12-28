@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'add_todo_modal.dart';
 
 class Home extends StatefulWidget {
     @override
@@ -27,6 +28,14 @@ class HomeState extends State<Home> {
                         ),
                     );
                 },
+            ),
+            floatingActionButton: FloatingActionButton(
+                onPressed: () => showDialog<void>(
+                    context: context,
+                    builder: (BuildContext context) => AddTodoModal(),
+                ),
+                tooltip: 'add',
+                child: Icon(Icons.add),
             ),
         );
     }
